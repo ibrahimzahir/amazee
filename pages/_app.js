@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
+import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 import Head from "next/head";
 
@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/" />
       </Head>
 
-      <NavBar />
+      <Navbar />
 
       <Component {...pageProps} />
       <Footer />
