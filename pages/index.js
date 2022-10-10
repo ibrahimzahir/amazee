@@ -4,6 +4,8 @@ import Link from "next/link";
 import FreshShops from "../components/FreshShops";
 import PromoShops from "../components/PromoShops";
 import PopShops from "../components/PopShops";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 export default function Home() {
   return (
