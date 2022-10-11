@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import FreshShops from "../components/FreshShops";
-import PopToday from "../components/PopToday";
+import FreshProds from "../components/FreshProds";
+import PopToday from "../components/PromoShops";
 import PopShops from "../components/PopShops";
 import { sanityClient, urlFor } from "../sanity";
+import Seasonal from "../components/Seasonal";
 
 export default function Home({ popProducts, freshProds }) {
   return (
@@ -27,22 +28,32 @@ export default function Home({ popProducts, freshProds }) {
       <div className="container m-auto">
         <section className="px-6 py-5">
           <h1 className="text-3xl py-6">Fresh this Week</h1>
-          <div className="">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {freshProds?.map((freshProd) => (
-              <FreshShops key={freshProd._id} title={freshProd.title} />
+              <FreshProds
+                key={freshProd._id}
+                title={freshProd.title}
+                image={freshProd.mainImage}
+              />
             ))}
           </div>
         </section>
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
-            <h1 className="text-3xl">Popular</h1>
+            <h1 className="text-3xl">Seasonal</h1>
             <Link href="/shops">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
           </div>
 
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
-            <PopShops />
+            {popProducts.map((popProduct) => (
+              <Seasonal
+                key={popProduct._id}
+                image={popProduct.mainImage}
+                title={popProduct.title}
+              />
+            ))}
           </div>
         </section>
       </div>
@@ -75,7 +86,7 @@ export const getStaticProps = async () => {
     body,
     tags,
     mainImage
-  }[0..4]`;
+  }[0..3]`;
   const freshProds = await sanityClient.fetch(fquery);
   return {
     props: {
