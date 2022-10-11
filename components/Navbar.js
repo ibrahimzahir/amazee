@@ -24,7 +24,7 @@ function Navbar() {
         <ul className="flex items-center font-semibold">
           <li className="relative group py-2 px-2">
             <button className="pl-5 text-red-400 text-sm cursor-pointer">
-              Trending
+              Amazee
             </button>
           </li>
           <li className="relative group py-2 px-2">
