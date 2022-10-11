@@ -41,7 +41,7 @@ export default function Home({ popProducts, freshProds }) {
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
             <h1 className="text-3xl">Seasonal</h1>
-            <Link href="/shops">
+            <Link href="/seasonal">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
           </div>
