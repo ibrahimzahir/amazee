@@ -170,15 +170,23 @@ function Navbar() {
           </Link>
         </ul>
       </nav>
-      <div className="flex border rounded-full items-center justify-center">
-        <nav className="mb-3 xl:w-96">
-          <div className="justify-end">
-            <MagnifyingGlassIcon
-              className="md:inline-flex mx-2 h-8 bg-red-400 
+
+      <div className="hidden sm:flex sm:w-96 py-2 items-center rounded-full border justify-between">
+        <div className="">
+          <input
+            type="search"
+            className="form-control relative flex-auto min-w-0 block w-full  mx-6 py-1 text-base font-normal text-gray-700 bg-white bg-clip-padding  focus:text-gray-700 focus:bg-white  focus:outline-none"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="button-addon2"
+          />
+        </div>
+        <div className="justify-end">
+          <MagnifyingGlassIcon
+            className="md:inline-flex mx-2 h-8 bg-red-400 
         text-white rounded-full p-2"
-            />
-          </div>
-        </nav>
+          />
+        </div>
       </div>
     </header>
   );
