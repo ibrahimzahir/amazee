@@ -23,12 +23,14 @@ function Navbar() {
         </Link>
       </div>
       <nav className="">
-        <ul className="flex items-center font-semibold">
+        <ul className="flex items-center font-semibold gap-8">
           <Link href="/" className="relative group py-2 px-2">
-            <a className="pl-5 text-red-400 text-sm cursor-pointer">Amazee</a>
+            <a className="pl-5 text-red-400 text-sm cursor-pointer font-light	bg-red-50 rounded-full px-4 py-2">
+              Amazee
+            </a>
           </Link>
           <li className="relative group py-2 px-2">
-            <button className="cursor-pointer  text-gray-700 text-sm">
+            <button className="cursor-pointer text-gray-700 text-sm">
               Categories
             </button>
             <div className="absolute top-0 -left-20 sm:-left-48 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-[350px] sm:min-w-[560px] transform">
@@ -47,7 +49,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Health & Beauty
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light text-sm">
                               Cosmetics, Makeup
                             </p>
                           </a>
@@ -58,7 +60,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Electronics
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light text-sm">
                               Appliances, White Goods
                             </p>
                           </a>
@@ -69,7 +71,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Toys & Hobbies
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Games, Sports
                             </p>
                           </a>
@@ -80,7 +82,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Fashion
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light text-sm">
                               Dresses, Jeans, Shoes
                             </p>
                           </a>
@@ -91,7 +93,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Furniture
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Office, Home
                             </p>
                           </a>
@@ -109,7 +111,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Events
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Party, Conference
                             </p>
                           </a>
@@ -120,7 +122,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Resturents
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Food, Coffee, Tea
                             </p>
                           </a>
@@ -131,7 +133,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Accommodation
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Renting, Day use
                             </p>
                           </a>
@@ -142,7 +144,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Craft & Printing
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Books, handcraft
                             </p>
                           </a>
@@ -153,7 +155,7 @@ function Navbar() {
                             className="block p-2 -mx-2 rounded-lg hover:bg-gradient-to-tl hover:from-indigo-50 hover:to-pink-50 hover:via-red-50 transition ease-in-out duration-300 text-gray-800 font-semibold hover:text-red-600"
                           >
                             Delivery & Logistic
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-500 font-light	text-sm">
                               Transportation
                             </p>
                           </a>
