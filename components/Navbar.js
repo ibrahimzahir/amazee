@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
@@ -168,7 +170,16 @@ function Navbar() {
           </Link>
         </ul>
       </nav>
-      <nav></nav>
+      <div className="flex border rounded-full items-center justify-center">
+        <nav className="mb-3 xl:w-96">
+          <div className="justify-end">
+            <MagnifyingGlassIcon
+              className="md:inline-flex mx-2 h-8 bg-red-400 
+        text-white rounded-full p-2"
+            />
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }
