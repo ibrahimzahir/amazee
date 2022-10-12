@@ -4,7 +4,7 @@ function MyDocument() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="/images/shop.png" />
+        <link rel="icon" href="/images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link

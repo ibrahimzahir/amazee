@@ -11,7 +11,7 @@ function Navbar() {
         <Link href="/">
           <a>
             <Image
-              src="/images/shop.png"
+              src="/images/logo.png"
               layout="fixed"
               objectFit="contain"
               height={50}
@@ -181,7 +181,7 @@ function Navbar() {
             aria-describedby="button-addon2"
           />
         </div>
-        <div className="justify-end">
+        <div className="">
           <MagnifyingGlassIcon
             className="md:inline-flex mx-2 h-8 bg-red-400 
         text-white rounded-full p-2"
