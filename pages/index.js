@@ -9,7 +9,13 @@ import PopShops from "../components/PopShops";
 import { sanityClient, urlFor } from "../sanity";
 import Seasonal from "../components/Seasonal";
 
-export default function Home({ pCategories, popProducts, freshProds }) {
+export default function Home({
+  pCategories,
+  popProducts,
+  freshProds,
+  sProducts,
+}) {
+  console.log(sProducts);
   return (
     <main>
       <section className="pl-8 md:pl-24 py-10">
@@ -49,11 +55,11 @@ export default function Home({ pCategories, popProducts, freshProds }) {
           </div>
 
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {popProducts.map((popProduct) => (
+            {sProducts?.map((sProduct) => (
               <Seasonal
-                key={popProduct._id}
-                image={popProduct.mainImage}
-                title={popProduct.title}
+                key={sProduct._id}
+                image={sProduct.mainImage}
+                title={sProduct.title}
               />
             ))}
           </div>
@@ -99,12 +105,31 @@ export const getStaticProps = async () => {
     tags,
     mainImage
   }[0..3]`;
+
   const freshProds = await sanityClient.fetch(fquery);
+
+  const sQuery = `*[_type == "product" && "seasonal" in tags[]]{
+    
+    _id, 
+      title,
+      slug,
+      tags,
+      vendor,
+      categories,
+      body,
+      tags,
+      mainImage
+      
+    }`;
+
+  const sProducts = await sanityClient.fetch(sQuery);
+
   return {
     props: {
       popProducts,
       freshProds,
       pCategories,
+      sProducts,
     },
   };
 };
