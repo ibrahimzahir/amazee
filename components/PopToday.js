@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { sanityClient, urlFor } from "../sanity";
+import { urlFor } from "../sanity";
 
-function PopToday({ _id, title, image }) {
+function PopToday({ _id, title, image, description }) {
   return (
     <div className="relative rounded-xl group">
       <div

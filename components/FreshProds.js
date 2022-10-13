@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { sanityClient, urlFor } from "../sanity";
 
-function FreshProds({ title, image }) {
+function FreshProds({ title, image, category }) {
   return (
     <div className="relative rounded-xl group">
       <div className="w-full h-72 relative space-y-4">
@@ -22,7 +22,7 @@ function FreshProds({ title, image }) {
         ></div>
         <div className="absolute space-y-2 -mt-20 p-4 bottom-0">
           <h4 className="text-sm font-semibold text-white">{title}</h4>
-          <p className="text-white text-sm">Status</p>
+          <p className="text-white text-sm"> {category}</p>
         </div>
       </div>
     </div>

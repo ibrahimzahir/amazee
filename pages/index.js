@@ -4,22 +4,23 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FreshProds from "../components/FreshProds";
-import PopToday from "../components/PromoShops";
+import PopToday from "../components/PopToday";
 import PopShops from "../components/PopShops";
 import { sanityClient, urlFor } from "../sanity";
 import Seasonal from "../components/Seasonal";
 
-export default function Home({ popProducts, freshProds }) {
+export default function Home({ pCategories, popProducts, freshProds }) {
   return (
     <main>
       <section className="pl-8 md:pl-24 py-10">
         <h1 className="text-3xl py-6">Popular Today</h1>
         <div className="flex flex-nowrap space-x-4 overflow-x-auto scrollbar-hide">
-          {popProducts?.map((product) => (
+          {pCategories?.map((category) => (
             <PopToday
-              key={product._id}
-              title={product.title}
-              image={product.mainImage}
+              key={category._id}
+              title={category.title}
+              image={category.mainImage}
+              description={category.description}
             />
           ))}
         </div>
@@ -33,6 +34,7 @@ export default function Home({ popProducts, freshProds }) {
               <FreshProds
                 key={freshProd._id}
                 title={freshProd.title}
+                category={freshProd.categories}
                 image={freshProd.mainImage}
               />
             ))}
@@ -76,13 +78,23 @@ export const getStaticProps = async () => {
 
   const popProducts = await sanityClient.fetch(query);
 
+  const cquery = `*[_type == "category"]{
+    _id, 
+    title,
+    slug,
+    mainImage,
+    description
+  }`;
+
+  const pCategories = await sanityClient.fetch(cquery);
+
   const fquery = `*[_type == "product"]{
     _id, 
     title,
     slug,
     tags,
     vendor,
-    categories,
+    "categories": categories[]->title,
     body,
     tags,
     mainImage
@@ -92,6 +104,7 @@ export const getStaticProps = async () => {
     props: {
       popProducts,
       freshProds,
+      pCategories,
     },
   };
 };
