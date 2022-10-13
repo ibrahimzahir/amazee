@@ -1,26 +1,28 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { sanityClient, urlFor } from "../sanity";
+import { urlFor } from "../sanity";
 
 function Seasonal({ title, image }) {
   return (
-    <div
-      className="items-center mb-2 
-            space-x-4 rounded-xl cursor-pointer
-             hover:scale-105 
-            transition transform duration-150 ease-out"
-    >
-      <Image
-        className="rounded-xl"
-        objectFit="cover"
-        src={urlFor(image).url()}
-        width={190}
-        height={270}
-        layout="fixed"
-      />
-      <p className="font-light">{title}</p>
-    </div>
+    <>
+      <div className="flex flex-col h-64 w-full relative bg-white rounded-md leading-normal  bg-cover cursor-pointer">
+        <Image
+          className="rounded-xl"
+          src={urlFor(image).url()}
+          layout="fill"
+          objectFit="cover"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-32 rounded-xl bg-gradient-to-b from-transparent to-black"
+        ></div>
+        <div className="absolute inset-x-0 bottom-0 h-16 left-4 text-white">
+          <p className="font-based">{title}</p>
+          <p className="font-thin text-sm">{title}</p>
+        </div>
+      </div>
+    </>
   );
 }
 
