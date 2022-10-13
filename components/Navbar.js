@@ -6,8 +6,8 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50  px-24 py-4 flex items-center justify-between border-b bg-white">
-      <div className="hidden sm:flex ">
+    <header className="sticky top-0 z-50 px-6 md:px-24 py-4 flex items-center justify-between border-b bg-white">
+      <div className="">
         <Link href="/">
           <a>
             <Image
@@ -23,7 +23,7 @@ function Navbar() {
         </Link>
       </div>
       <nav className="">
-        <ul className="flex items-center font-semibold md:gap-8">
+        <ul className="hidden sm:flex items-center font-semibold md:gap-8">
           <Link href="/" className="relative group py-2 px-2">
             <a className="pl-5 text-red-400 text-sm cursor-pointer font-light	bg-red-50 rounded-full px-4 py-2">
               Amazee
