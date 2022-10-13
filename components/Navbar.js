@@ -23,7 +23,7 @@ function Navbar() {
         </Link>
       </div>
       <nav className="">
-        <ul className="flex items-center font-semibold gap-8">
+        <ul className="flex items-center font-semibold md:gap-8">
           <Link href="/" className="relative group py-2 px-2">
             <a className="pl-5 text-red-400 text-sm cursor-pointer font-light	bg-red-50 rounded-full px-4 py-2">
               Amazee
