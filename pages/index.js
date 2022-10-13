@@ -46,7 +46,7 @@ export default function Home({ popProducts, freshProds }) {
             </Link>
           </div>
 
-          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="flex space-x-3  p-3 -ml-3">
             {popProducts.map((popProduct) => (
               <Seasonal
                 key={popProduct._id}

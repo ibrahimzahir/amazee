@@ -6,7 +6,7 @@ import { urlFor } from "../sanity";
 function Seasonal({ title, image }) {
   return (
     <>
-      <div className="flex flex-col h-64 w-full relative bg-white rounded-md leading-normal  bg-cover cursor-pointer">
+      <div className="h-64 w-full relative bg-white rounded-md leading-normal  bg-cover cursor-pointer">
         <Image
           className="rounded-xl"
           src={urlFor(image).url()}
