@@ -18,7 +18,9 @@ export default function Home({
   return (
     <main>
       <section className="pl-8 md:pl-24 py-10">
-        <h1 className="text-3xl py-6">Popular Today</h1>
+        <h1 className="text-md font-semibold sm:text-3xl sm:font-normal py-6">
+          Popular Today
+        </h1>
         <div className="flex flex-nowrap space-x-4 overflow-x-auto scrollbar-hide">
           {pCategories?.map((category) => (
             <PopToday
@@ -33,7 +35,9 @@ export default function Home({
 
       <div className="container m-auto">
         <section className="px-6 py-5">
-          <h1 className="text-3xl py-6">Fresh this Week</h1>
+          <h1 className="text-md font-semibold sm:text-3xl sm:font-normal py-6">
+            Fresh this Week
+          </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {freshProds?.map((freshProd) => (
               <FreshProds
@@ -49,11 +53,13 @@ export default function Home({
           <div className="flex items-center justify-between py-3">
             <h1 className="text-3xl">Seasonal</h1>
             <Link href="/seasonal">
-              <a className="text-base cursor-pointer pr-4">See All</a>
+              <a className="text-sm sm:text-base cursor-pointer pr-4">
+                See All
+              </a>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
@@ -65,13 +71,15 @@ export default function Home({
         </section>
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
-            <h1 className="text-3xl">Celebrations</h1>
+            <h1 className="text-md font-semibold sm:text-3xl sm:font-normal">
+              Celebrations
+            </h1>
             <Link href="/seasonal">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
@@ -83,13 +91,15 @@ export default function Home({
         </section>
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
-            <h1 className="text-3xl">Greate for Next Holiday Trip</h1>
+            <h1 className="text-md font-semibold sm:text-3xl sm:font-normal">
+              Greate for Next Holiday Trip
+            </h1>
             <Link href="/seasonal">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-8">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
