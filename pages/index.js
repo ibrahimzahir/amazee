@@ -59,7 +59,7 @@ export default function Home({
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
@@ -79,7 +79,7 @@ export default function Home({
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
@@ -92,14 +92,14 @@ export default function Home({
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
             <h1 className="text-md font-semibold sm:text-3xl sm:font-normal">
-              Greate for Next Holiday Trip
+              Greate for Next Trip
             </h1>
             <Link href="/seasonal">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
           </div>
 
-          <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
               <Seasonal
                 key={sProduct._id}
