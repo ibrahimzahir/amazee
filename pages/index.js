@@ -15,7 +15,6 @@ export default function Home({
   freshProds,
   sProducts,
 }) {
-  console.log(sProducts);
   return (
     <main>
       <section className="pl-8 md:pl-24 py-10">
@@ -35,7 +34,7 @@ export default function Home({
       <div className="container m-auto">
         <section className="px-6 py-5">
           <h1 className="text-3xl py-6">Fresh this Week</h1>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {freshProds?.map((freshProd) => (
               <FreshProds
                 key={freshProd._id}
@@ -49,6 +48,42 @@ export default function Home({
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
             <h1 className="text-3xl">Seasonal</h1>
+            <Link href="/seasonal">
+              <a className="text-base cursor-pointer pr-4">See All</a>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {sProducts?.map((sProduct) => (
+              <Seasonal
+                key={sProduct._id}
+                image={sProduct.mainImage}
+                title={sProduct.title}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="px-6 py-10">
+          <div className="flex items-center justify-between py-3">
+            <h1 className="text-3xl">Celebrations</h1>
+            <Link href="/seasonal">
+              <a className="text-base cursor-pointer pr-4">See All</a>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {sProducts?.map((sProduct) => (
+              <Seasonal
+                key={sProduct._id}
+                image={sProduct.mainImage}
+                title={sProduct.title}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="px-6 py-10">
+          <div className="flex items-center justify-between py-3">
+            <h1 className="text-3xl">Greate for Next Holiday Trip</h1>
             <Link href="/seasonal">
               <a className="text-base cursor-pointer pr-4">See All</a>
             </Link>
