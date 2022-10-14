@@ -51,7 +51,9 @@ export default function Home({
         </section>
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
-            <h1 className="text-3xl">Seasonal</h1>
+            <h1 className="text-md font-semibold sm:text-3xl sm:font-normal">
+              Seasonal
+            </h1>
             <Link href="/seasonal">
               <a className="text-sm sm:text-base cursor-pointer pr-4">
                 See All
