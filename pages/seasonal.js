@@ -1,13 +1,13 @@
 import React from "react";
-import Seasonal from "../components/Seasonal";
+import SeasonalLarge from "../components/SeasonalLarge";
 import { sanityClient } from "../sanity";
 
 function seasonal({ seasonals }) {
   return (
-    <div className="container m-auto px-12 sm:px-2">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 py-16">
+    <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {seasonals?.map((seasonal) => (
-          <Seasonal
+          <SeasonalLarge
             key={seasonal._id}
             image={seasonal.mainImage}
             title={seasonal.title}
@@ -21,7 +21,7 @@ function seasonal({ seasonals }) {
 export default seasonal;
 
 export const getStaticProps = async () => {
-  const query = `*[_type == "product"]{
+  const query = `*[_type == "product" && "seasonal" in tags[]]{
     _id, 
     title,
     slug,
@@ -31,7 +31,7 @@ export const getStaticProps = async () => {
     body,
     tags,
     mainImage
-  }[0..3]`;
+  }`;
   const seasonals = await sanityClient.fetch(query);
   return {
     props: {

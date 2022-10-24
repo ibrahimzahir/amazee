@@ -7,7 +7,7 @@ import FreshProds from "../components/FreshProds";
 import PopToday from "../components/PopToday";
 import PopShops from "../components/PopShops";
 import { sanityClient, urlFor } from "../sanity";
-import Seasonal from "../components/Seasonal";
+import SeasonalSmall from "../components/SeasonalSmall";
 
 export default function Home({
   pCategories,
@@ -19,7 +19,7 @@ export default function Home({
     <main>
       <section className="pl-8 md:pl-24 py-10">
         <h1 className="text-md font-semibold sm:text-3xl sm:font-normal py-6">
-          Popular Today
+          Popular today
         </h1>
         <div className="flex flex-nowrap space-x-4 overflow-x-auto scrollbar-hide">
           {pCategories?.map((category) => (
@@ -36,7 +36,7 @@ export default function Home({
       <div className="container m-auto">
         <section className="px-6 py-5">
           <h1 className="text-md font-semibold sm:text-3xl sm:font-normal py-6">
-            Fresh this Week
+            Fresh this week
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {freshProds?.map((freshProd) => (
@@ -56,14 +56,14 @@ export default function Home({
             </h1>
             <Link href="/seasonal">
               <a className="text-sm sm:text-base cursor-pointer pr-4">
-                See All
+                See all
               </a>
             </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
-              <Seasonal
+              <SeasonalSmall
                 key={sProduct._id}
                 image={sProduct.mainImage}
                 title={sProduct.title}
@@ -77,13 +77,13 @@ export default function Home({
               Celebrations
             </h1>
             <Link href="/seasonal">
-              <a className="text-base cursor-pointer pr-4">See All</a>
+              <a className="text-base cursor-pointer pr-4">See all</a>
             </Link>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
-              <Seasonal
+              <SeasonalSmall
                 key={sProduct._id}
                 image={sProduct.mainImage}
                 title={sProduct.title}
@@ -94,16 +94,16 @@ export default function Home({
         <section className="px-6 py-10">
           <div className="flex items-center justify-between py-3">
             <h1 className="text-md font-semibold sm:text-3xl sm:font-normal">
-              Greate for Next Trip
+              Greate for next trip
             </h1>
             <Link href="/seasonal">
-              <a className="text-base cursor-pointer pr-4">See All</a>
+              <a className="text-base cursor-pointer pr-4">See all</a>
             </Link>
           </div>
 
           <div className="grid grid-cols-2  md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
             {sProducts?.map((sProduct) => (
-              <Seasonal
+              <SeasonalSmall
                 key={sProduct._id}
                 image={sProduct.mainImage}
                 title={sProduct.title}
@@ -156,7 +156,6 @@ export const getStaticProps = async () => {
   const freshProds = await sanityClient.fetch(fquery);
 
   const sQuery = `*[_type == "product" && "seasonal" in tags[]]{
-    
     _id, 
       title,
       slug,
@@ -166,7 +165,6 @@ export const getStaticProps = async () => {
       body,
       tags,
       mainImage
-      
     }`;
 
   const sProducts = await sanityClient.fetch(sQuery);
