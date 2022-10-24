@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "../sanity";
 
+import { StarIcon } from "@heroicons/react/24/solid";
+
 function SeasonalLarge({ title, image }) {
   const [isLoading, setLoading] = useState(true);
   return (
@@ -24,8 +26,18 @@ function SeasonalLarge({ title, image }) {
           onLoadingComplete={() => setLoading(false)}
         />
       </div>
-      <h3 className="mt-4 text-sm text-gray-700">{title}</h3>
-      <p className="mt-1 text-lg font-medium text-gray-900">{title}</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h3 className="mt-4 text-sm font-medium text-gray-700">{title}</h3>
+          <p className="mt-1 text-sm text-gray-700">{title}</p>
+        </div>
+        <div>
+          <span className="flex gap-2">
+            <StarIcon className="h-4 w-4" />
+            <h1 className="text-sm text-gray-500">4.2</h1>
+          </span>
+        </div>
+      </div>
     </a>
   );
 }
