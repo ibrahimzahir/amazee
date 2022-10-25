@@ -8,12 +8,14 @@ import PopToday from "../components/PopToday";
 import PopShops from "../components/PopShops";
 import { sanityClient, urlFor } from "../sanity";
 import SeasonalSmall from "../components/SeasonalSmall";
+import CelebSmall from "../components/CelebSmall";
 
 export default function Home({
   pCategories,
   popProducts,
   freshProds,
   sProducts,
+  cProducts,
 }) {
   return (
     <main>
@@ -82,11 +84,11 @@ export default function Home({
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-6">
-            {sProducts?.map((sProduct) => (
-              <SeasonalSmall
-                key={sProduct._id}
-                image={sProduct.mainImage}
-                title={sProduct.title}
+            {cProducts?.map((cProduct) => (
+              <CelebSmall
+                key={cProduct._id}
+                image={cProduct.mainImage}
+                title={cProduct.title}
               />
             ))}
           </div>
@@ -165,9 +167,22 @@ export const getStaticProps = async () => {
       body,
       tags,
       mainImage
-    }`;
+    }[0..5]`;
 
   const sProducts = await sanityClient.fetch(sQuery);
+
+  const cQuery = `*[_type == "product" && "celebration" in tags[]]{
+    _id, 
+      title,
+      slug,
+      tags,
+      vendor,
+      categories,
+      body,
+      tags,
+      mainImage
+    }[0..5]`;
+  const cProducts = await sanityClient.fetch(cQuery);
 
   return {
     props: {
@@ -175,6 +190,7 @@ export const getStaticProps = async () => {
       freshProds,
       pCategories,
       sProducts,
+      cProducts,
     },
   };
 };
